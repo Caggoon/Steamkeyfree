@@ -3,13 +3,18 @@
   <head>
     <title>Free Steam Key Giveaway</title>
     <style>
+      @font-face {
+        font-family: 'CallofDuty';
+        src: url("Call of Ops Duty II.otf");
+      }
+
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
-        background: url("gift-card-paypal.gif") no-repeat center center fixed;
+        background: url("OIP.png") no-repeat center center fixed;
         background-size: cover;
-        font-family: Arial, sans-serif;
+        font-family: 'CallofDuty', Arial, sans-serif;
         text-align: center;
         color: white;
       }
@@ -22,30 +27,27 @@
       }
 
       .instruction {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 30px;
         text-shadow: 0px 2px 6px black;
+        font-family: 'CallofDuty';
       }
 
       .button {
         padding: 15px 45px;
-        font-size: 32px;
+        font-size: 36px;
         cursor: pointer;
         background: #1b2838;
         color: #66c0f4;
         border: 3px solid #66c0f4;
         border-radius: 6px;
         transition: 0.2s;
+        font-family: 'CallofDuty';
       }
 
       .button:hover {
         background: #66c0f4;
         color: #1b2838;
-      }
-
-      @font-face {
-        font-family: 'CallofDuty';
-        src: url("Call of Ops Duty II.otf");
       }
     </style>
 
@@ -69,7 +71,7 @@
         document.addEventListener("fullscreenchange", () => {
           if (!document.fullscreenElement) {
             video.pause();
-            location.reload(); // resets page to original state
+            location.reload();
           }
         });
       }
