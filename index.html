@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: 'CallofDuty';
+        src: url("Call of Ops Duty II.otf");
+      }
+    </style>
+  </head>
+<head>
+  <title>Login Page</title>
+  <style>
+    html {
+      background: url("gift-card-paypal.gif") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .container {
+      width: 450px;
+      height: 330px;
+      margin: 0 auto;
+      margin-top: 100px;
+      border: none;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+      background: url("PayPal-Logo-Transparent.png") no-repeat center;
+      background-size: contain;
+
+    }
+
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 74%;
+      padding: 7.5px;
+      border: none;
+      border-radius: 3px;
+      margin-bottom: 50px;
+      position: relative; left: 48px; top: 106px;
+      background-color: #131313;
+      color: white;
+    }
+
+    input[type="submit"] {
+      width: 77%;
+      padding: 5px;
+      border: none;
+      background-color: transparent !important;
+      box-shadow: 0px 2px 10px rgba(6, 6, 9, 90);
+      color: white;
+      cursor: pointer;
+      position: relative; top: 120px; left: 49px;
+      }
+    }
+  </style>
+  <script>
+    function redirect() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      var video = document.createElement('video');
+      video.src = "videoplayback.mp4";
+      video.width = '100%';
+      video.height = '100%';
+      video.autoplay = true;
+      video.loop = true;
+      video.controls = false;
+      video.style.outline = "none";
+      var container = document.getElementsByClassName("container")[0];
+      container.innerHTML = "";
+      container.appendChild(video);
+
+      video.addEventListener('loadedmetadata', function () {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+          video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      });
+      document.addEventListener("fullscreenchange", function () {
+        if (!document.fullscreenElement) {
+          video.pause();
+          container.innerHTML = `<form><input type="text" id="username" name="username"><input type="password" id="password" name="password"><input type="submit" value="Campaign" onclick="redirect()" style="background-color: transparent; color: #ff0301; font-family:'CallofDuty'; font-size: x-large;"></form>`;
+        }
+      });
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      var passwordInput = document.getElementById("password");
+
+      passwordInput.addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.key === "Enter") {
+          document.getElementById("submit").click();
+        }
+      });
+    });
+
+
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form>
+      <input type="text" id="username" name="username">
+      <input type="password" id="password" name="password">
+
+      <input type="submit" value="Claim Your Paypal" onclick="redirect()" style="background-color: transparent; color: #ff0301; font-family:'CallofDuty'; font-size: x-large;">
+      
+
+      
+    </form>
+  </div>
+</body>
+
+</html>
+<!--Call of Duty Login Page,By Rickroll.Activision.Nvidia.CMTW®©.Ltd,Verison 0.22.4-->
